@@ -17,7 +17,6 @@ public class Main{
         Etat etat = new Etat(220);
         Parcours p = new Parcours(etat.largeurFenetre, etat.hauteurFenetre,etat);
         Affichage a= new Affichage(etat);
-        new ThreadAfficheur(a).start();
         Control c = new Control(etat,a);
 
         /**fenetre.addMouseListener(a);**/
@@ -38,8 +37,14 @@ public class Main{
 
 
         System.out.println("commence le deuxième thread");
-        new Voler(etat).start();
-        new Avancer(p,etat).start();
+        Voler v=new Voler(etat);
+        v.start();
+        //new Voler(etat).start();
+        Avancer avancer = new Avancer(p,etat);
+        avancer.start();
+        //new Avancer(p,etat).start();
+        new ThreadAfficheur(a,v,avancer).start();
+
     }
 
 

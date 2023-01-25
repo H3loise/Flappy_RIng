@@ -1,10 +1,18 @@
 package Vue;
 
+import Modele.Avancer;
+import Modele.Voler;
+
 public class ThreadAfficheur extends Thread{
     Affichage affichage;
+    Voler voler;
+    Avancer avancer;
 
-    public ThreadAfficheur(Affichage a){
+    public ThreadAfficheur(Affichage a, Voler v, Avancer avancer){
         this.affichage=a;
+        this.voler=v;
+        this.avancer=avancer;
+
     }
 
     @Override
@@ -16,6 +24,10 @@ public class ThreadAfficheur extends Thread{
                 sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+            if(affichage.e.testPerdu()){
+                avancer.stop();
+                voler.stop();
             }
         }
 

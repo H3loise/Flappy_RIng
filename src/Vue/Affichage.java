@@ -34,7 +34,7 @@ public class Affichage extends JPanel{
             g.setColor(Color.BLACK);
             for (int i = 1; i < e.ligne.getLigne().size(); i++) {
                 if(i==2){
-                    g.setColor(Color.BLUE);
+                    g.setColor(Color.RED);
                 }
                 g.drawLine(x - this.e.ligne.getPosition(), y, e.ligne.getLigne().get(i).x - this.e.ligne.getPosition(), e.ligne.getLigne().get(i).y);
                 x = e.ligne.getLigne().get(i).x;

@@ -19,6 +19,9 @@ public class ThreadAfficheur extends Thread{
     public void run() {
         while(true){
             //System.out.println("rentre dans le thread affichage");
+            //System.out.println("la position du cercle est en : "+affichage.e.ligne.getPosition());
+            //System.out.println("la position du point est en : "+affichage.e.ligne.getLigne().get(1).x);
+            //System.out.println("la position du deuxième point est : "+affichage.e.ligne.getLigne().get(2).x);
             affichage.repaint();
             try {
                 sleep(20);

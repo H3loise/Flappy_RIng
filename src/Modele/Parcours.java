@@ -18,6 +18,7 @@ public class Parcours {
         this.position=0;
         this.etat=etat;
         this.ligne=new ArrayList<>();
+        //valeur prec a 270
         this.ligne.add(new Point(-20,270));
         this.ligne.add(new Point(0,270));
         this.ligne.add(new Point(100,270));
@@ -55,11 +56,19 @@ public class Parcours {
     }
 
     public Point getPremier(){
-        return ligne.get(0);
+        return ligne.get(1);
     }
 
     public Point getSecond(){
-        return ligne.get(1);
+        return ligne.get(2);
+    }
+
+    public Point getThird(){
+        return ligne.get(3);
+    }
+
+    public Point getForth(){
+        return ligne.get(4);
     }
 
 

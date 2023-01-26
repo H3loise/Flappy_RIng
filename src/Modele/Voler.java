@@ -19,7 +19,7 @@ public class Voler extends Thread{
         //System.out.println("rentre dans la boucle \n");
         while(true){
             //System.out.println("debut de la boucle");
-            System.out.println("move down");
+            //System.out.println("move down");
             if(etat.getHauteur()<etat.hauteurFenetre - etat.hauteurRond) {
                 etat.moveDown();
             }

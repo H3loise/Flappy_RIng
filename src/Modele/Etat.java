@@ -11,7 +11,7 @@ public class Etat {
     public static final int largeurFenetre = 300;
     public static final int hauteurFenetre = 300;
     public static final int hauteurRond = 60;
-    public static final int widthRond = 40;
+    public static final int widthRond = 30;
 
     public Etat(int h){
         this.hauteur=h;
@@ -93,13 +93,14 @@ public class Etat {
         int y1=hauteur;
         int y2=hauteur+hauteurRond;
 
-        if((pos1>hauteur+hauteurRond+3 && pos2>hauteur+hauteurRond)|| (pos1<hauteur-4 && pos2<hauteur-4)){
+        if((pos1>hauteur+hauteurRond && pos2>hauteur+hauteurRond)|| (pos1<hauteur && pos2<hauteur)){
             //dead=true;
             System.out.println("mort");
             e=1;
+            return true;
         }
-
         return false;
+
     }
 
 

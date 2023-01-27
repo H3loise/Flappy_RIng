@@ -9,7 +9,7 @@ public class Affichage extends JPanel{
     public static final int largeur = 300;
     public static final int hauteur = 300;
     public static final int hauteurRond = 60;
-    public static final int widthRond = 40;
+    public static final int widthRond = 30;
     public int x=0;
     //public int y=200;
     public Etat e;

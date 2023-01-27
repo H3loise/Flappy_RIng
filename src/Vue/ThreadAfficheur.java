@@ -31,6 +31,8 @@ public class ThreadAfficheur extends Thread{
             if(affichage.e.testPerdu()){
                 avancer.stop();
                 voler.stop();
+                affichage.repaint();
+                this.stop();
             }
         }
 

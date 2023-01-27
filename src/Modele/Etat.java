@@ -88,12 +88,14 @@ public class Etat {
         //pente=-pente;
         float pos1 = (float)p1.y+pente *(ligne.getPosition()-p1.x);
         float pos2 = (float)p1.y+pente *(ligne.getPosition()+widthRond-p1.x);
+        float pos3 = (float)p1.y+pente *(ligne.getPosition()+widthRond/2-p1.x);
         int e=0;
         int x=ligne.getPosition()+hauteurRond/2;
         int y1=hauteur;
         int y2=hauteur+hauteurRond;
 
-        if((pos1>hauteur+hauteurRond && pos2>hauteur+hauteurRond)|| (pos1<hauteur && pos2<hauteur)){
+        //if((pos1>hauteur+hauteurRond && pos2>hauteur+hauteurRond)|| (pos1<hauteur && pos2<hauteur)){
+        if(pos3>hauteur+hauteurRond || pos3<hauteur){
             //dead=true;
             System.out.println("mort");
             e=1;

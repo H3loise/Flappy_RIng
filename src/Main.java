@@ -1,9 +1,7 @@
 import Controller.Control;
-import Modele.Avancer;
-import Modele.Etat;
-import Modele.Parcours;
-import Modele.Voler;
+import Modele.*;
 import Vue.Affichage;
+import Vue.Images;
 import Vue.ThreadAfficheur;
 
 import javax.swing.*;
@@ -14,9 +12,12 @@ public class Main{
     public static void main(String [] args) {
 
         JFrame fenetre = new JFrame("Jumping Ring");
-        Etat etat = new Etat(220);
+        Images images=new Images();
+        Oiseau o1 = new Oiseau(100,1,80,300);
+        o1.start();
+        Etat etat = new Etat(220,o1);
         Parcours p = new Parcours(etat.largeurFenetre, etat.hauteurFenetre,etat);
-        Affichage a= new Affichage(etat);
+        Affichage a= new Affichage(etat,images);
         Control c = new Control(etat,a);
 
         /**fenetre.addMouseListener(a);**/

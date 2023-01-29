@@ -12,9 +12,11 @@ public class Etat {
     public static final int hauteurFenetre = 300;
     public static final int hauteurRond = 60;
     public static final int widthRond = 30;
+    public Oiseau o1;
 
-    public Etat(int h){
+    public Etat(int h,Oiseau o){
         this.hauteur=h;
+        this.o1=o;
     }
 
     public int getHauteur(){
@@ -78,12 +80,13 @@ public class Etat {
         Point p2 = ligne.getSecond();
         Point p3 = ligne.getThird();
         Point p4 = ligne.getForth();
-        /**
+        int xcentre = ligne.getPosition()+widthRond/2;
+
+
         if(ligne.getPosition()+widthRond/2> p2.x){
-            p1=p3;
-            p2=p4;
+            p1=p2;
+            p2=p3;
         }
-         **/
         float pente = (float) (p2.y-p1.y)/(p2.x-p1.x);
         //pente=-pente;
         float pos1 = (float)p1.y+pente *(ligne.getPosition()-p1.x);
@@ -95,8 +98,11 @@ public class Etat {
         int y2=hauteur+hauteurRond;
 
         //if((pos1>hauteur+hauteurRond && pos2>hauteur+hauteurRond)|| (pos1<hauteur && pos2<hauteur)){
-        if(pos3>hauteur+hauteurRond || pos3<hauteur){
+        if(pos3>hauteur+hauteurRond+3 || pos3<hauteur-3){
             //dead=true;
+            System.out.println("la borne sup est a : "+y1);
+            System.out.println("la borne moins est a : "+y2);
+            System.out.println("le point sur la pente est a : "+pos3);
             System.out.println("mort");
             e=1;
             return true;
@@ -104,6 +110,4 @@ public class Etat {
         return false;
 
     }
-
-
 }

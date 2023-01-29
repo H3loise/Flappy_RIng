@@ -77,7 +77,7 @@ public class Avancer extends Thread{
             }
             //a.repaint();
             try {
-                sleep(50);
+                sleep(40);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

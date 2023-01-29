@@ -25,7 +25,7 @@ public class ThreadAfficheur extends Thread{
             affichage.repaint();
             try {
                 sleep(20);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException e){
                 e.printStackTrace();
             }
             if(affichage.e.testPerdu()){

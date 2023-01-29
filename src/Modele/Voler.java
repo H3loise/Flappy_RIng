@@ -25,7 +25,7 @@ public class Voler extends Thread{
             }
             //affichage.repaint();
             try {
-                sleep(50);
+                sleep(40);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

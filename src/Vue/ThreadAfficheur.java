@@ -5,12 +5,11 @@ import Modele.Voler;
 
 public class ThreadAfficheur extends Thread{
     Affichage affichage;
-    VueOiseau vueOiseau;
     Voler voler;
     Avancer avancer;
 
-    //constructeur de Threadafficheur contenant tout les thread pour pouvoir les arreter en fin de partie
-    public ThreadAfficheur(Affichage a, Voler v, Avancer avancer,VueOiseau vo){
+    //constructeur de Threadafficheur contenant tout les threads pour pouvoir les arreter en fin de partie
+    public ThreadAfficheur(Affichage a, Voler v, Avancer avancer){
         this.affichage=a;
         this.voler=v;
         this.avancer=avancer;

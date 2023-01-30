@@ -12,13 +12,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class VueOiseau{
     ArrayList<Oiseau> oiseaux;
     Images images;
-    Etat e;
 
 
     // Constructeur de VueOiseau en place deja 1 dans le tableau pour ne pas avoir a traiter le cas ou il est vide
     public VueOiseau(Images i){
         this.oiseaux=new ArrayList<>();
-        Oiseau o = new Oiseau(e);
+        Oiseau o = new Oiseau();
         o.start();
         oiseaux.add(o);
         images=i;
@@ -34,10 +33,9 @@ public class VueOiseau{
                 oiseaux.remove(0);
             }
             Random rn =new Random();
-            int randomNum = ThreadLocalRandom.current().nextInt(0, 420);
-            System.out.println("la valeur du random est  "+randomNum);
+            int randomNum = ThreadLocalRandom.current().nextInt(0, 440);
             if(randomNum==80){
-                Oiseau o = new Oiseau(e);
+                Oiseau o = new Oiseau();
                 o.start();
                 oiseaux.add(o);
             }

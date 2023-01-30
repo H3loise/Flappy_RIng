@@ -11,12 +11,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Avancer extends Thread{
     Parcours ligne;
     Etat etat;
-    Affichage a;
 
     public Avancer(Parcours l, Etat e){
         this.ligne=l;
         this.etat=e;
-        //this.a=a;
     }
 
 

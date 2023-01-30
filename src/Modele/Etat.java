@@ -12,7 +12,6 @@ public class Etat {
     public static final int hauteurFenetre = 300;
     public static final int hauteurRond = 60;
     public static final int widthRond = 30;
-    public Oiseau o1;
 
 
     //Constructeur de Etat hauteur est la valeur de départ du cercle
@@ -27,11 +26,11 @@ public class Etat {
 
     public void jump(){
         hauteur=hauteur-20;
-    }// réalise un saut
+    }// réalise un saut l'anneau monte de 20 pixels
 
     public void moveDown(){
         hauteur=hauteur+2;
-    }// fait descendre le rond
+    }// fait descendre le rond l'anneau decsned de 2 pixels
 
     public boolean testPerdu(){
         Point p1 = ligne.getPremier();
@@ -50,7 +49,7 @@ public class Etat {
         float pos3 = (float)p1.y+pente *(ligne.getPosition()+widthRond/2-p1.x);
         int y1=hauteur;
         int y2=hauteur+hauteurRond;
-        if(pos3>hauteur+hauteurRond+3 || pos3<hauteur-3){
+        if(pos3>hauteur+hauteurRond || pos3<hauteur){
             return true;
         }
         return false;

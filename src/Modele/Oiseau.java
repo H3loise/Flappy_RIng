@@ -8,7 +8,6 @@ public class Oiseau extends Thread{
     private int state;
     int hauteur;
     int x;
-    private Etat etat;
 
     // Accède a l'etatv de 1 à 8 correspondant a l'image a afficher
     public int getEtat() {
@@ -31,8 +30,7 @@ public class Oiseau extends Thread{
     }
 
     // Constructeur d'un oiseau avec hauteur et delais aléatoire
-    public Oiseau(Etat e){
-        this.etat=e;
+    public Oiseau(){
         Random rn =new Random();
         int randomNum = ThreadLocalRandom.current().nextInt(80, 150);
         this.delai= randomNum;

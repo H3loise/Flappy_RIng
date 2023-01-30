@@ -9,21 +9,18 @@ public class ThreadAfficheur extends Thread{
     Voler voler;
     Avancer avancer;
 
+    //constructeur de Threadafficheur contenant tout les thread pour pouvoir les arreter en fin de partie
     public ThreadAfficheur(Affichage a, Voler v, Avancer avancer,VueOiseau vo){
         this.affichage=a;
         this.voler=v;
         this.avancer=avancer;
-        VueOiseau vueOiseau=vo;
 
     }
 
+    // Fonction Run reaffichant le jeu toutes les 20 miliseconde ( valeur arbitraire)
     @Override
     public void run() {
         while(true){
-            //System.out.println("rentre dans le thread affichage");
-            //System.out.println("la position du cercle est en : "+affichage.e.ligne.getPosition());
-            //System.out.println("la position du point est en : "+affichage.e.ligne.getLigne().get(1).x);
-            //System.out.println("la position du deuxième point est : "+affichage.e.ligne.getLigne().get(2).x);
             affichage.repaint();
 
             try {

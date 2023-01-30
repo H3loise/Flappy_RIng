@@ -10,22 +10,27 @@ public class Oiseau extends Thread{
     int x;
     private Etat etat;
 
+    // Accède a l'etatv de 1 à 8 correspondant a l'image a afficher
     public int getEtat() {
         return state;
     }
 
+    // Renvoie l'abscise de l'oiseau
     public int getX(){
         return this.x;
     }
 
+    // Renvoie la hauteur de l'oiseau
     public int getHauteur(){
         return this.hauteur;
     }
 
+    // permet de changer l'abscisse de l'oiseau
     public void setX(int x){
         this.x=x;
     }
 
+    // Constructeur d'un oiseau avec hauteur et delais aléatoire
     public Oiseau(Etat e){
         this.etat=e;
         Random rn =new Random();
@@ -39,6 +44,7 @@ public class Oiseau extends Thread{
     }
 
 
+    //Mise a jour de l'etat
     @Override
     public void run() {
         while(true){

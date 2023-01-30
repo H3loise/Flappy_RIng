@@ -15,6 +15,7 @@ public class VueOiseau{
     Etat e;
 
 
+    // Constructeur de VueOiseau en place deja 1 dans le tableau pour ne pas avoir a traiter le cas ou il est vide
     public VueOiseau(Images i){
         this.oiseaux=new ArrayList<>();
         Oiseau o = new Oiseau(e);
@@ -23,9 +24,9 @@ public class VueOiseau{
         images=i;
     }
 
+    //Fonction qui place les oiseaux sur la fenetre et lance/coupe les threads
     public void dessiner(Graphics g){
         for(int i=0;i< oiseaux.size();i++){
-            //g.drawImage(images.ImageOiseau.get(e.o1.getEtat()-1),e.o1.getX(),50,100,100,null);
             g.drawImage(images.ImageOiseau.get(oiseaux.get(i).getEtat()-1),oiseaux.get(i).getX(),oiseaux.get(i).getHauteur(),100,100,null);
             oiseaux.get(i).setX(oiseaux.get(i).getX()-1);
             if(oiseaux.get(i).getX()<-100){

@@ -11,22 +11,18 @@ public class Control implements MouseListener {
     public Affichage a;
 
 
+    // constructeur de Controle
     public Control(Etat etat, Affichage affichage){
         this.etat=etat;
         this.a=affichage;
     }
 
+    //fonction permettant interaction avec l'utilisateur (click)
     @Override
     public void mouseClicked(MouseEvent e) {
         if(etat.getHauteur()>0){
             etat.jump();
         }
-        //etat.jump();
-        /**repaint();**/
-        System.out.println("coucou\n");
-        //a.repaint();
-
-
     }
 
     @Override

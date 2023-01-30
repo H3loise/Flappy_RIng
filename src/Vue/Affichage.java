@@ -8,6 +8,11 @@ import java.awt.*;
 public class Affichage extends JPanel{
     public static final int largeur = 300;
     public static final int hauteur = 300;
+    //private int largeur;
+    //private int hauteur;
+    //private int hauteurRond;
+    //private int widthRond;
+
     public static final int hauteurRond = 60;
     public static final int widthRond = 30;
     public int x=0;
@@ -16,9 +21,22 @@ public class Affichage extends JPanel{
     Images images;
     VueOiseau vueOiseau;
 
+    public int getlargeur(){
+        return largeur;
+    }
+
+    public int gethauteur(){
+        return hauteur;
+    }
+
+    //Constructeur de l'affichage extraction de la taille de la fenetre et du cercle depuis le modele
     public Affichage(Etat etat, Images i ,VueOiseau vo){
         setPreferredSize(new Dimension(largeur, hauteur));
         this.e=etat;
+        //largeur=e.largeurFenetre;
+        //hauteur=e.hauteurFenetre;
+        //hauteurRond=e.hauteurRond;
+        //widthRond=e.widthRond;
         this.images=i;
          this.vueOiseau = vo;
     }

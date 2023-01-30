@@ -3,6 +3,7 @@ import Modele.*;
 import Vue.Affichage;
 import Vue.Images;
 import Vue.ThreadAfficheur;
+import Vue.VueOiseau;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -13,11 +14,13 @@ public class Main{
 
         JFrame fenetre = new JFrame("Jumping Ring");
         Images images=new Images();
-        Oiseau o1 = new Oiseau(100,1,80,300);
+        Etat etat = new Etat(220);
+        Oiseau o1 = new Oiseau(etat);
         o1.start();
-        Etat etat = new Etat(220,o1);
+        etat.o1=o1;
+        VueOiseau vueOiseau = new VueOiseau(images);
         Parcours p = new Parcours(etat.largeurFenetre, etat.hauteurFenetre,etat);
-        Affichage a= new Affichage(etat,images);
+        Affichage a= new Affichage(etat,images, vueOiseau);
         Control c = new Control(etat,a);
 
         /**fenetre.addMouseListener(a);**/
@@ -44,7 +47,7 @@ public class Main{
         Avancer avancer = new Avancer(p,etat);
         avancer.start();
         //new Avancer(p,etat).start();
-        new ThreadAfficheur(a,v,avancer).start();
+        new ThreadAfficheur(a,v,avancer,vueOiseau).start();
 
     }
 

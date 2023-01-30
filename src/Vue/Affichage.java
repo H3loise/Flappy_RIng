@@ -14,11 +14,13 @@ public class Affichage extends JPanel{
     //public int y=200;
     public Etat e;
     Images images;
+    VueOiseau vueOiseau;
 
-    public Affichage(Etat etat, Images i ){
+    public Affichage(Etat etat, Images i ,VueOiseau vo){
         setPreferredSize(new Dimension(largeur, hauteur));
         this.e=etat;
         this.images=i;
+         this.vueOiseau = vo;
     }
 
     @Override
@@ -28,7 +30,9 @@ public class Affichage extends JPanel{
         if(e.testPerdu()){
             g.drawString("You Lost at : "+e.ligne.getPosition(),largeur/4,hauteur/2);
         }else {
-            g.drawImage(images.ImageOiseau.get(e.o1.getEtat()-1),50,50,100,100,null);
+            //g.drawImage(images.ImageOiseau.get(e.o1.getEtat()-1),e.o1.getX(),50,100,100,null);
+            vueOiseau.dessiner(g);
+            e.o1.setX(e.o1.getX()-1);
             g.drawOval(x, e.getHauteur(), widthRond, hauteurRond);
             int x = e.ligne.getLigne().get(0).x - this.e.ligne.getPosition();
             int y = e.ligne.getLigne().get(0).y;

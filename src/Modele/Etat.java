@@ -14,10 +14,10 @@ public class Etat {
     public static final int widthRond = 30;
     public Oiseau o1;
 
-    public Etat(int h,Oiseau o){
+    public Etat(int h){
         this.hauteur=h;
-        this.o1=o;
     }
+
 
     public int getHauteur(){
         return this.hauteur;
